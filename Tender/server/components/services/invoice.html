@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      padding: 50px;
+    }
+    div.container {
+      max-width: 1150px;
+      margin: 0 auto;
+      font-family: "Open Sans";
+    }
+
+    div.container p {
+      margin: 0;
+    }
+
+    .container h1,
+    .container h2 {
+      margin: 0px;
+      color: #2980b9;
+    }
+
+    .container h1 {
+      font-size: 50px
+    }
+
+    hr {
+      border: 1px solid #2980b9;
+      margin: 30px 0;
+    }
+
+    table.bordered {
+      border-collapse: collapse;
+    }
+
+    table.bordered td,
+    table.bordered th,
+    table.bordered {
+      border: 2px solid #2980b9;
+    }
+
+    .full-width { width: 100%; }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .text-left { text-align: left; }
+    .text-top * { vertical-align: top; }
+
+    .monospaced {
+      font-family: "Monaco", monospace;
+    }
+
+    table.padded th,
+    table.padded td {
+      padding: 5px;
+    }
+
+    table th {
+      font-weight: normal;
+    }
+
+    .mt-s { margin-top: 23px; }
+    .mb-s { margin-bottom: 23px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Seller Fields -->
+  <img style="display: block;margin: 0 auto;" src="https://s3.ap-south-1.amazonaws.com/tenderwatch/logo3%401024.png" height="200" width="200" />
+  <p><br/></p>
+  <h1>{{seller.company}}</h1>
+  <p><strong>Address:</strong></p>
+  <p>{{seller.company}}<br/>
+    {{seller.address.street}}<br/>
+    {{seller.address.city}}<br/>
+    {{seller.address.country}}<br/>
+  </p>
+  <p><br/></p>
+  <p>{{seller.address.zip}}</p>
+  <p>Email: <strong>{{seller.email}}</strong></p>
+  <p>Phone: <strong>{{seller.phone}}</strong></p>
+  <p>Website: <strong>{{seller.website}}</strong></p>
+  <hr>
+
+  <!-- Seller Fields -->
+  <p><strong>Subscriber :</strong></p>
+  <h1>{{buyer.company}}</h1>
+  <p>Phone: <strong>{{buyer.phone}}</strong></p>
+
+  <table class="bordered full-width padded mt-s mb-s monospaced">
+    <thead>
+    <tr>
+      <th style="width: 30px;"><strong>Nr. crt</strong></th>
+      <th>
+        <strong>Description</strong><br>
+      </th>
+      <th>
+        <strong>Unit</strong><br>
+      </th>
+      <th>
+        <strong>Qty.</strong><br>
+      </th>
+      <th>
+        <strong>Unit price.<br>
+          –{{invoice.currency.main}}–
+        </strong><br>
+      </th>
+      <th>
+        <strong>Total Amount.<br>
+          –{{invoice.currency.main}}–
+        </strong><br>
+      </th>
+    </tr>
+    </thead>
+    <tbody class="text-top">
+    {{{description_rows}}}
+    </tbody>
+  </table>
+  {{invoice.explanation}}
+</div>
+</body>
+</html>

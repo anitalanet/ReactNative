@@ -1,0 +1,11 @@
+<tr>
+  <td>{{nrCrt}}</td>
+  <td id="{{nrCrt}}"><ul style="list-style: none;">{{#country}}<li><img style="vertical-align: middle;margin-right: 5px;" src={{countryImage}} height="auto" width="20"><b style="vertical-align: middle;font-size: 14px;">{{countryName}}</b></li>{{/country}}
+    {{#category}}<li>{{categoryName}}<img style="margin-left: 5px;" src={{categoryImage}} height="auto" width="30"></li>{{/category}}
+    <li><b>Expiry Date: </b>{{expiredDate}}</li>
+    </ul></td>
+  <td>{{unit}}</td>
+  <td class="text-right">{{quantity}}</td>
+  <td class="text-right">{{unitPrice.main}}</td>
+  <td class="text-right">{{amount.main}}</td>
+</tr>
